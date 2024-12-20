@@ -15,6 +15,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        cursor: pointer; /* Cambiar el cursor para indicar que se puede hacer clic */
     }
 
     /* Contenedor para el fondo de la cuadrícula */
@@ -40,7 +41,7 @@
     }
   </style>
 </head>
-<body>
+<body onclick="playAudio()">
 <!-- partial:index.partial.html -->
 <svg xmlns="http://www.w3.org/2000/svg" id="svg5" version="1.1" viewBox="0 0 502.98 108.61">
   <path id="heart" d="M213.35 29.43c19.41-15.19 33.68 10.86 37.73 18.82-.28-13.61 11.64-40.98 25.94-34.01 32.3 15.74-15.88 83.8-26.4 81.76-13.24-9-51.35-53.3-37.27-66.57Z" style="fill:#ff9999;stroke:#ff9999;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"/>
@@ -49,10 +50,17 @@
 <!-- partial -->
 <div class="ecg-background"></div>
 
-<!-- Audio con reproducción automática y en loop -->
-<audio id="heart" autoplay loop>
+<!-- Audio con Loop -->
+<audio id="heartAudio" loop>
   <source src="heart.mp3" type="audio/mpeg">
   Tu navegador no soporta el audio.
 </audio>
+
+<script>
+  function playAudio() {
+    var audio = document.getElementById('heartAudio');
+    audio.play();  // Inicia la reproducción del audio
+  }
+</script>
 </body>
 </html>
